@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nathaniel Ngohayon - Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -3;
+      background-color: #0d0d0d;
+    }
+
+    .call-bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+    }
+
+    .call-bg span {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.3;
+      color: #4da6ff;
+      user-select: none;
+    }
+
+    .call-phone {
+      animation: floatPhone 6s linear infinite;
+    }
+
+    .call-mobile {
+      animation: floatPhone 10s linear infinite;
+    }
+
+    .call-bg span:nth-child(1) { top: 90%; left: 5%; animation-delay: 0s; }
+    .call-bg span:nth-child(2) { top: 100%; left: 20%; animation-delay: 2s; }
+    .call-bg span:nth-child(3) { top: 95%; left: 40%; animation-delay: 4s; }
+    .call-bg span:nth-child(4) { top: 105%; left: 60%; animation-delay: 1s; }
+    .call-bg span:nth-child(5) { top: 110%; left: 80%; animation-delay: 3s; }
+    .call-bg span:nth-child(6) { top: 115%; left: 30%; animation-delay: 5s; }
+    .call-bg span:nth-child(7) { top: 120%; left: 50%; animation-delay: 6s; }
+
+    @keyframes floatPhone {
+      0% { transform: translateY(0); opacity: 0.3; }
+      50% { transform: translateY(-50vh); opacity: 0.5; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 60px;
+      background-color: transparent;
+      position: relative;
+      z-index: 2;
+    }
+
+    header .logo {
+      font-size: 24px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 300;
+    }
+
+    nav a:hover {
+      color: #4da6ff;
+    }
+
+    .contact-btn {
+      background-color: #4da6ff;
+      color: #000;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .contact {
+      padding: 80px 20px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      text-align: center;
+    }
+
+    .contact-box {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid #4da6ff;
+      border-radius: 15px;
+      padding: 35px;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .contact-box h1 {
+      font-size: 40px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+
+    .contact-box p {
+      font-size: 18px;
+      margin: 15px 0;
+      color: #cccccc;
+    }
+
+    .contact-box a {
+      color: #4da6ff;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .contact {
+        padding: 40px 20px;
+      }
+
+      .contact-box h1 {
+        font-size: 32px;
+      }
+
+      .contact-box {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Floating Phone Icons -->
+  <div class="call-bg">
+    <span class="call-mobile">📱</span>
+    <span class="call-phone">📞</span>
+    <span class="call-mobile">📱</span>
+    <span class="call-phone">📞</span>
+    <span class="call-mobile">📱</span>
+    <span class="call-phone">📞</span>
+    <span class="call-mobile">📱</span>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">nates-tech</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="Profile.html">Portfolio</a>
+      <a href="blog.html">Hobbies</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="contact-btn">Contact Me</a>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <div class="contact-box">
+      <h1>Contact Me</h1>
+      <p><strong>Facebook:</strong> <a href="https://www.facebook.com/na.tan.niieel" target="_blank">facebook.com/na.tan.niieel</a></p>
+      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/nates.dn" target="_blank">@nates.dn</a></p>
+      <p><strong>Tiktok:</strong> <a href="https://www.tiktok.com/@nathanielngohayon?lang=en">Natesss360</a></p>
+      <p><strong>Email:</strong> <a href="mailto:notnates50@email.com">notnates50@email.com</a></p>
+      <p><strong>Contact No.:</strong> +63 912 878 4224</p>
+    </div>
+  </section>
+
+  <!-- Load Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 70, density: { enable: true, value_area: 800 } },
+        color: { value: "#4da6ff" },
+        shape: {
+          type: "circle",
+          stroke: { width: 0, color: "#000000" },
+        },
+        opacity: {
+          value: 0.5,
+          random: false,
+          anim: { enable: false }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: { enable: false }
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#4da6ff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 1 } },
+          push: { particles_nb: 4 },
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+
+</body>
+</html>

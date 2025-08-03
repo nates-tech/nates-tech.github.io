@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nathaniel Ngohayon - UX/UI Designer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      background-color: #0d0d0d;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 60px;
+      background-color: transparent;
+      position: relative;
+      z-index: 2;
+    }
+
+    header .logo {
+      font-size: 24px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 300;
+    }
+
+    nav a:hover {
+      color: #4da6ff;
+    }
+
+    .contact-btn {
+      background-color: #4da6ff;
+      color: #000;
+      padding: 10px 18px;
+      border-radius: 20px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text {
+      max-width: 50%;
+    }
+
+    .hero-text h2 {
+      font-weight: 300;
+      font-size: 22px;
+      color: #aaaaaa;
+    }
+
+    .hero-text h1 {
+      font-size: 50px;
+      margin: 10px 0;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: #cccccc;
+      margin: 20px 0;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .hero-buttons a {
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .hero-buttons .get-started {
+      background-color: #4da6ff;
+      color: #000;
+    }
+
+    .hero-buttons .video-btn {
+      background-color: transparent;
+      border: 1px solid #4da6ff;
+      color: #4da6ff;
+    }
+
+    .hero-image {
+      position: relative;
+      max-width: 40%;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    .triangle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      border: 3px solid #ffcc66;
+      clip-path: polygon(100% 0, 100% 100%, 40% 100%);
+      z-index: -1;
+    }
+
+    .clients {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 18px;
+      color: #cccccc;
+    }
+
+    .clients span {
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+
+      .hero-text, .hero-image {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-image {
+        margin-top: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <header>
+    <div class="logo">nates-tech</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="Profile.html">Portfolio</a>
+      <a href="blog.html">Hobbies</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="contact-btn">Contact Me</a>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Hello I'm</h2>
+      <h1>Nathaniel Ngohayon</h1>
+      <p>As a dedicated criminology student, I am deeply passionate about understanding crime, justice, and the societal factors that shape human behavior. Through my studies, I aim to contribute to building safer communities by exploring the root causes of criminal acts and the systems designed to address them</p>
+    </div>
+    <div class="hero-image">
+     
+      <img src="background.jpg" alt="Nathaniel Ngohayon">
+    </div>
+  </section>
+
+  <!-- Load particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 70, density: { enable: true, value_area: 800 } },
+        color: { value: "#4da6ff" },
+        shape: {
+          type: "circle",
+          stroke: { width: 0, color: "#000000" },
+        },
+        opacity: {
+          value: 0.5,
+          random: false,
+          anim: { enable: false }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: { enable: false }
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#4da6ff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+        }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 1 } },
+          push: { particles_nb: 4 },
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>
