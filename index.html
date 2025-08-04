@@ -176,6 +176,23 @@
         margin-top: 40px;
       }
     }
+
+    /* FADE SLIDE UP ANIMATION */
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-up {
+      animation: fadeSlideUp 1s ease-out forwards;
+      opacity: 0;
+    }
   </style>
 </head>
 <body>
@@ -196,15 +213,14 @@
   </header>
 
   <section class="hero">
-    <div class="hero-text">
+    <div class="hero-text fade-up">
       <h2>Hello I'm</h2>
       <h1>Nathaniel Ngohayon</h1>
       <p>Welcome to my website!
 
-I'm excited you're here.  This space showcases my projects, skills, and experiences.  Take a look around, and don't hesitate to reach out if you have any questions.</p>
+I'm excited you're here. This space showcases my projects, skills, and experiences. Take a look around, and don't hesitate to reach out if you have any questions.</p>
     </div>
-    <div class="hero-image">
-     
+    <div class="hero-image fade-up">
       <img src="background.jpg" alt="Nathaniel Ngohayon">
     </div>
   </section>
@@ -262,6 +278,4 @@ I'm excited you're here.  This space showcases my projects, skills, and experien
     });
   </script>
 </body>
-
 </html>
-
