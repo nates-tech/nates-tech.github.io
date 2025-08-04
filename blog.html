@@ -16,11 +16,10 @@
       height: 100%;
       font-family: 'Poppins', sans-serif;
       color: #ffffff;
-      background-color: #0d0d0d;
       overflow-x: hidden;
     }
 
-      #particles-js {
+    #particles-js {
       position: fixed;
       top: 0;
       left: 0;
@@ -70,16 +69,6 @@
       padding: 80px 60px;
       position: relative;
       z-index: 2;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: slideUp 0.8s ease-out forwards;
-    }
-
-    @keyframes slideUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
 
     .blog h1 {
@@ -135,6 +124,7 @@
       }
     }
 
+    /* Lightbox Styles */
     .lightbox-overlay {
       position: fixed;
       top: 0;
@@ -162,6 +152,7 @@
 </head>
 <body>
 
+  <!-- Particles Background -->
   <div id="particles-js"></div>
 
   <header>
@@ -173,7 +164,7 @@
       <a href="blog.html">Hobbies</a>
       <a href="Contact.html">Contact</a>
     </nav>
-    <a href="Contact.html" class="contact-btn">Contact Me</a>
+    <a href="contact.html" class="contact-btn">Contact Me</a>
   </header>
 
   <section class="blog">
@@ -201,7 +192,7 @@
 
     <div class="blog-post">
       <h2>Watch videos/movies as a pastime</h2>
-      <p>I enjoy watching videos/movies during my free time.</p>
+      <p>I enjoy watching movies during my free time.</p>
       <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 20px; margin-top: 20px;">
         <img src="m1.jpg" alt="Movie 1" style="width: 20%; border-radius: 10px;">
         <img src="m2.png" alt="Movie 2" style="width: 20%; border-radius: 10px;">
@@ -211,7 +202,7 @@
     </div>
   </section>
 
-  <!-- Lightbox -->
+  <!-- Lightbox Image Viewer -->
   <div class="lightbox-overlay" id="lightbox">
     <img src="" alt="Preview" id="lightbox-img">
   </div>
@@ -245,7 +236,7 @@
       particles: {
         number: { value: 70, density: { enable: true, value_area: 800 } },
         color: { value: "#4da6ff" },
-        shape: { type: "circle" },
+        shape: { type: "circle", stroke: { width: 0, color: "#000000" }},
         opacity: { value: 0.5 },
         size: { value: 3, random: true },
         line_linked: {
@@ -277,4 +268,3 @@
   </script>
 </body>
 </html>
-
