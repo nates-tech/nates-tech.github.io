@@ -17,6 +17,16 @@
       font-family: 'Poppins', sans-serif;
       color: #ffffff;
       overflow-x: hidden;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    .fade-out {
+      opacity: 0;
     }
 
     #particles-js {
@@ -155,7 +165,6 @@
       </p>
     </div>
     <div class="about-image">
-      
       <img src="aboutpic.jpg" alt="Nathaniel Ngohayon">
     </div>
   </section>
@@ -163,6 +172,7 @@
   <!-- Load particles.js -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
+    // Particle JS Init
     particlesJS("particles-js", {
       particles: {
         number: { value: 70, density: { enable: true, value_area: 800 } },
@@ -196,7 +206,27 @@
       },
       retina_detect: true
     });
+
+    // Page Fade-in Animation
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
+
+    // Page Transition Fade-out
+    const links = document.querySelectorAll('a[href]');
+    links.forEach(link => {
+      const url = link.getAttribute('href');
+      if (url && !url.startsWith('#') && !url.startsWith('mailto')) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.body.classList.remove('fade-in');
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location.href = url;
+          }, 500);
+        });
+      }
+    });
   </script>
 </body>
 </html>
-
