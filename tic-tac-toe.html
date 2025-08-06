@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tic Tac Toe vs Computer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(to bottom, #e0f0ff, #ffffff);
+      color: #003366;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 10px;
+    }
+
+    h1 {
+      margin-top: 10px;
+      font-size: 36px;
+    }
+
+    p.play-message {
+      font-size: 20px;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    #board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 5px;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    .cell {
+      background-color: #ffffff;
+      border: 2px solid #0077cc;
+      font-size: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .cell:hover {
+      background-color: #cce6ff;
+    }
+
+    .win {
+      background-color: #a6f3a6 !important;
+      animation: glow 1s infinite alternate;
+    }
+
+    .lose {
+      background-color: #ff9999 !important;
+      animation: shake 0.3s 3;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 10px #00cc00; }
+      to { box-shadow: 0 0 20px #00cc00; }
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+
+    #status {
+      font-size: 20px;
+      margin: 15px 0;
+    }
+
+    #reset, .back-btn {
+      margin: 10px 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #0077cc;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    #reset:hover, .back-btn:hover {
+      background-color: #005fa3;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tic Tac Toe vs Computer</h1>
+  <p class="play-message">Play for a while</p>
+
+  <div id="board"></div>
+  <div id="status">Your turn (X)</div>
+
+  <div class="btn-group">
+    <button id="reset">Restart Game</button>
+    <a href="index.html" class="back-btn">Back</a>
+  </div>
+
+  <script>
+    const board = document.getElementById('board');
+    const status = document.getElementById('status');
+    const reset = document.getElementById('reset');
+
+    let cells = Array(9).fill(null);
+    let gameOver = false;
+    let winCells = [];
+
+    const winPatterns = [
+      [0,1,2], [3,4,5], [6,7,8],
+      [0,3,6], [1,4,7], [2,5,8],
+      [0,4,8], [2,4,6]
+    ];
+
+    function checkWinner() {
+      for (const [a, b, c] of winPatterns) {
+        if (cells[a] && cells[a] === cells[b] && cells[a] === cells[c]) {
+          gameOver = true;
+          winCells = [a, b, c];
+          return cells[a];
+        }
+      }
+      if (!cells.includes(null)) {
+        gameOver = true;
+        return 'Draw';
+      }
+      return null;
+    }
+
+    function playerMove(index) {
+      if (cells[index] || gameOver) return;
+      cells[index] = 'X';
+      render();
+
+      const result = checkWinner();
+      if (result) {
+        showResult(result);
+        return;
+      }
+
+      status.textContent = "Computer's turn (O)";
+      setTimeout(computerMove, 500);
+    }
+
+    function computerMove() {
+      if (gameOver) return;
+
+      const available = cells
+        .map((val, idx) => val === null ? idx : null)
+        .filter(v => v !== null);
+
+      if (available.length === 0) return;
+
+      const randomIndex = available[Math.floor(Math.random() * available.length)];
+      cells[randomIndex] = 'O';
+      render();
+
+      const result = checkWinner();
+      if (result) {
+        showResult(result);
+      } else {
+        status.textContent = "Your turn (X)";
+      }
+    }
+
+    function render() {
+      board.innerHTML = '';
+      cells.forEach((cell, i) => {
+        const cellDiv = document.createElement('div');
+        cellDiv.className = 'cell';
+        cellDiv.textContent = cell;
+        if (winCells.includes(i)) {
+          cellDiv.classList.add(cell === 'X' ? 'win' : 'lose');
+        }
+        cellDiv.onclick = () => playerMove(i);
+        board.appendChild(cellDiv);
+      });
+    }
+
+    function showResult(result) {
+      if (result === 'Draw') {
+        status.textContent = "It's a Draw!";
+      } else if (result === 'X') {
+        status.textContent = "You Win!";
+      } else {
+        status.textContent = "You Lose!";
+      }
+      render(); // re-render to apply effect
+    }
+
+    reset.onclick = () => {
+      cells = Array(9).fill(null);
+      gameOver = false;
+      winCells = [];
+      status.textContent = "Your turn (X)";
+      render();
+    };
+
+    render();
+  </script>
+
+</body>
+</html>
